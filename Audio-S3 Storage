@@ -1,0 +1,18 @@
+[{"id":"40fcad42.f15864","type":"tab","label":"Flow 1"},
+{"id":"baf6b42.4b69248","type":"tls-config","z":"","name":"",
+"cert":"","key":"","ca":"","certname":"e7794dc09c-certificate.pem.crt","keyname":"e7794dc09c-private.pem.key","caname":"rootCA.pem",
+"verifyservercert":true},
+{"id":"bf529b48.9ea6a8","type":"mqtt-broker","z":"","broker":"a3p01d0b1hrnix.iot.us-west-2.amazonaws.com","port":"8883",
+"tls":"baf6b42.4b69248","clientid":"","usetls":true,
+"compatmode":true,"keepalive":"60","cleansession":true,"willTopic":"","willQos":"0","willPayload":"","birthTopic":"",
+"birthQos":"0","birthPayload":""},
+{"id":"9da59e06.5d0b5","type":"aws-config","z":""},
+{"id":"ccd24053.187d4","type":"inject","z":"40fcad42.f15864","name":"","topic":"","payload":"false","
+payloadType":"bool","repeat":"","crontab":"","once":false,"x":153,"y":247,"wires":[["a84af6cc.9e23f8"]]},
+{"id":"aedb47c7.e278c8","type":"inject","z":"40fcad42.f15864","name":"","topic":"","payload":"true","payloadType":"bool",
+"repeat":"","crontab":"","once":false,"x":221,"y":127,"wires":[["a84af6cc.9e23f8"]]},
+{"id":"97cbfc5c.cf454","type":"amazon s3 out","z":"40fcad42.f15864","aws":"9da59e06.5d0b5","bucket":"bluewingsrobotics",
+"filename":"","localFilename":"","region":"us-west-2","name":"","x":652,"y":183,"wires":[]},
+{"id":"a84af6cc.9e23f8","type":"microPi","z":"40fcad42.f15864","name":"microPi","filename":"/home/pi/audio/2017-09-13T12:54:59.355Z",
+"domain":"http://localhost:1880","rate":"16000","bitwidth":"16","endian":"little","encoding":"signed-integer","channels":"2",
+"silence":"10","debug":true,"mode":"666","x":398,"y":229.5,"wires":[[],["97cbfc5c.cf454"],[]]}]
